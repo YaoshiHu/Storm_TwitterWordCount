@@ -22,10 +22,7 @@ public class FirstStorm {
             conf.setNumWorkers(3);
             try {
                 StormSubmitter.submitTopology(args[0], conf, builder.createTopology());
-            } catch (AlreadyAliveException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (InvalidTopologyException e) {
+            } catch (AlreadyAliveException | InvalidTopologyException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
